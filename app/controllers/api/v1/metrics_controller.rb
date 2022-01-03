@@ -1,9 +1,10 @@
 class Api::V1::MetricsController < ApplicationController
-  before_action :set_metric, only: [:show, :update, :destroy]
-  before_action :set_category, only: [:index]
+  before_action :set_metric, only: %i[update destroy]
+  before_action :set_site, only: [:index]
 
   def index
-    @metrics = @category.metrics
+    @categories = @site.categories.includes(:metrics)
+    @metrics = @categories.map(&:metrics).flatten
     render json: @metrics
   end
 
@@ -30,15 +31,16 @@ class Api::V1::MetricsController < ApplicationController
   end
 
   private
-    def set_metric
-      @metric = Metric.find(params[:id])
-    end
 
-    def set_category
-      @category = Category.find(params[:category_id])
-    end
+  def set_metric
+    @metric = Metric.find(params[:id])
+  end
 
-    def metric_params
-      params.permit(:name, :value)
-    end
+  def set_site
+    @site = Site.find(params[:site_id])
+  end
+
+  def metric_params
+    params.permit(:name, :value, :category_id)
+  end
 end

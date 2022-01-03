@@ -5,9 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-site  = Site.create(name:"Covid", auto: :inactive)
+site  = Site.create(name:"Food", auto: :inactive)
 puts "Success: Site Created"
-category = Category.create(name:'Dan', site_id: site.id)
+category = Category.create(name:'Eba', site_id: site.id)
 puts "Success: Category Created"
 Metric.create(category_id: category.id, value: 56)
+Metric.create(category_id: category.id, value: 32)
+Metric.create(category_id: category.id, value: 23)
 puts "Success: Metrics data loaded"

@@ -17,12 +17,10 @@
 #  fk_rails_...  (site_id => sites.id)
 #
 class Category < ApplicationRecord
-
-  #Associations
+  # Associations
   has_many :metrics
   belongs_to :site
 
-  #validations
+  # validations
   validates :name, presence: true, uniqueness: true, length: { in: 4..50 }
-  
 end

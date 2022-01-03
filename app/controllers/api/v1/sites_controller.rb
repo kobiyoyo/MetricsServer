@@ -1,5 +1,5 @@
 class Api::V1::SitesController < ApplicationController
-  before_action :set_site, only: [:show, :update, :destroy]
+  before_action :set_site, only: %i[show update destroy]
 
   def index
     @sites = Site.all
@@ -34,11 +34,12 @@ class Api::V1::SitesController < ApplicationController
   end
 
   private
-    def set_site
-      @site = Site.find(params[:id])
-    end
 
-    def site_params
-      params.permit(:name, :auto)
-    end
+  def set_site
+    @site = Site.find(params[:id])
+  end
+
+  def site_params
+    params.permit(:name, :auto)
+  end
 end

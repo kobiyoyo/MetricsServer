@@ -15,10 +15,10 @@ class Site < ApplicationRecord
   # Associations
   has_many :categories
 
-  #validations
+  # validations
   validates :name, presence: true, uniqueness: true, length: { in: 4..50 }
-  
-  #auto value 
+
+  # auto value
   AUTO = %i[active inactive].freeze
 
   enum auto: AUTO

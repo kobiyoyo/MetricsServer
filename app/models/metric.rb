@@ -17,9 +17,10 @@
 #  fk_rails_...  (category_id => categories.id)
 #
 class Metric < ApplicationRecord
-  #Associations
+  # Associations
   belongs_to :category
 
-  #Validations
+  # Validations
   validates :value, presence: true, numericality: true
+  validates_inclusion_of :value, in: 1..200
 end
