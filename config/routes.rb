@@ -7,8 +7,8 @@ Rails.application.routes.draw do
           resources :metrics, only: [:index]
         end
       end
+      resources :categories, only: [:destroy, :update, :create]
+      resources :metrics, only: [:destroy, :update, :create]
     end
-    resources :categories, only: [:destroy, :update, :create]
-    resources :metrics, only: [:destroy, :update, :create]
   end
 end

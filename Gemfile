@@ -10,6 +10,7 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pry', '~> 0.13.1'
 gem 'rack-cors'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
