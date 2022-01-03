@@ -19,5 +19,13 @@
 require 'rails_helper'
 
 RSpec.describe Metric, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'associations' do
+    it { is_expected.to belong_to(:category)}
+  end
+
+  describe 'validation' do
+    it { is_expected.to validate_presence_of(:value) }
+    it { should validate_inclusion_of(:value).in_range(0..100) }
+    it { is_expected.to validate_presence_of(:category_id) }
+  end
 end

@@ -21,6 +21,8 @@ class Metric < ApplicationRecord
   belongs_to :category
 
   # Validations
-  validates :value, presence: true, numericality: true
-  validates_inclusion_of :value, in: 1..200
+  validates :value, presence: true,
+                    numericality: true, inclusion: 0..100
+
+  validates :category_id, presence: true
 end

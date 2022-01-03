@@ -23,4 +23,5 @@ class Category < ApplicationRecord
 
   # validations
   validates :name, presence: true, uniqueness: true, length: { in: 4..50 }
+  validates :site_id, presence: true
 end
