@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2022_01_02_172315) do
 
   create_table "sites", force: :cascade do |t|
     t.string "name"
-    t.boolean "auto"
+    t.integer "auto"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

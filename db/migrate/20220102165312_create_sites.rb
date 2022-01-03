@@ -2,7 +2,7 @@ class CreateSites < ActiveRecord::Migration[6.1]
   def change
     create_table :sites do |t|
       t.string :name
-      t.boolean :auto
+      t.integer :auto
 
       t.timestamps
     end

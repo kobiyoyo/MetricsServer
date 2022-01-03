@@ -15,7 +15,7 @@ class Api::V1::SitesController < ApplicationController
     @site = Site.new(site_params)
 
     if @site.save
-      render json: @site, status: :created, location: @site
+      render json: @site, status: :created
     else
       render json: @site.errors, status: :unprocessable_entity
     end

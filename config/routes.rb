@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :metrics
-  resources :sites
+
   namespace :api do
     namespace :v1 do
-      resources :categories
+      resources :sites do 
+        resources :categories, only: [:index] do 
+          resources :metrics, only: [:index]
+        end
+      end
     end
+    resources :categories, only: [:destroy, :update, :create]
+    resources :metrics, only: [:destroy, :update, :create]
   end
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

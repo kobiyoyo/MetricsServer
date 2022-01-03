@@ -3,7 +3,7 @@
 # Table name: sites
 #
 #  id         :bigint           not null, primary key
-#  auto       :boolean          default(FALSE)
+#  auto       :integer
 #  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null

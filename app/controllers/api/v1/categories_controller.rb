@@ -1,8 +1,9 @@
 class Api::V1::CategoriesController < ApplicationController
   before_action :set_category, only: [:update, :destroy]
+  before_action :set_site, only: [:index] 
 
   def index
-    @categories = Category.all
+    @categories = @site.categories
 
     render json: @categories
   end
@@ -32,6 +33,10 @@ class Api::V1::CategoriesController < ApplicationController
   private
     def set_category
       @category = Category.find(params[:id])
+    end
+
+    def set_site
+      @site = Site.find(params[:site_id])
     end
 
     def category_params
