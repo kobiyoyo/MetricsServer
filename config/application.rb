@@ -23,6 +23,7 @@ module Metrics
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1
+    config.factory_bot.definition_file_paths = ["spec/factories"]
 
     # Configuration for the application, engines, and railties goes here.
     #
