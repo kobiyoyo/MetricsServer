@@ -20,8 +20,8 @@ require 'rails_helper'
 
 RSpec.describe Category, type: :model do
   describe 'associations' do
-    it { is_expected.to have_many(:metrics)}
-    it { is_expected.to belong_to(:site)}
+    it { is_expected.to have_many(:metrics) }
+    it { is_expected.to belong_to(:site) }
   end
 
   describe 'validation' do

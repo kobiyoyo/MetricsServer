@@ -12,7 +12,7 @@ require 'rails_helper'
 
 RSpec.describe Site, type: :model do
   describe 'associations' do
-    it { is_expected.to have_many(:categories)}
+    it { is_expected.to have_many(:categories) }
   end
 
   describe 'validation' do
