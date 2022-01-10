@@ -3,8 +3,7 @@ class Api::V1::MetricsController < ApplicationController
   before_action :set_site, only: [:index]
 
   def index
-    @categories = @site.categories.includes(:metrics)
-    @metrics = @categories.map(&:metrics).flatten
+    @metrics = GetMetricsFromSite.for(site: @site)
     render json: @metrics
   end
 

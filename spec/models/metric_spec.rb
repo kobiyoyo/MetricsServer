@@ -25,7 +25,7 @@ RSpec.describe Metric, type: :model do
 
   describe 'validation' do
     it { is_expected.to validate_presence_of(:value) }
-    it { should validate_inclusion_of(:value).in_range(0..100) }
+    it { should validate_inclusion_of(:value).in_range(1..100) }
     it { is_expected.to validate_presence_of(:category_id) }
   end
 end
