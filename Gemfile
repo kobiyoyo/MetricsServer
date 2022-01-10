@@ -8,6 +8,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 gem 'pg', '~> 1.1'
 gem 'pry', '~> 0.13.1'
 gem 'puma', '~> 5.0'
+gem 'power-types', '~> 0.3.1'
 gem 'rack-cors'
 gem 'rails', '~> 6.1.4', '>= 6.1.4.4'
 gem 'rubocop', '>= 1.0', '< 2.0'

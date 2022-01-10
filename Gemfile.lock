@@ -111,6 +111,7 @@ GEM
     parser (3.0.3.2)
       ast (~> 2.4.1)
     pg (1.2.3)
+    power-types (0.3.1)
     pry (0.13.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
@@ -214,6 +215,7 @@ DEPENDENCIES
   factory_bot_rails
   listen (~> 3.3)
   pg (~> 1.1)
+  power-types (~> 0.3.1)
   pry (~> 0.13.1)
   puma (~> 5.0)
   rack-cors
