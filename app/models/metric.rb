@@ -20,9 +20,12 @@ class Metric < ApplicationRecord
   # Associations
   belongs_to :category
 
+  # Scope
+  scope :averages, ->(date) { where('created_at > ?', date )}
+  
   # Validations
   validates :value, presence: true,
-                    numericality: true, inclusion: 0..100
+                    numericality: true, inclusion: 1..100
 
   validates :category_id, presence: true
 end
