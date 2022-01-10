@@ -1,10 +1,8 @@
 ## Metrics App
 
-  [![Actions Status](https://github.com/kobiyoyo/DevPlaceAssessment/workflows/Rails%20tests/badge.svg)](https://github.com/kobiyoyo/bikeshop/actions)
-
 
 ## Database Schema
-  <img src="app/assets/images/screenshot.png" alt="facebook-project">
+  <img src="app/assets/images/screenshot.png" alt="metric-project">
 
 ## How to Use
 To setup files and the app run
@@ -162,10 +160,10 @@ bundle exec rspec
 - Ruby on Rails - the web framework used to build the api .
 - Rspec - testing framework
 - PostgreSQL -  the main reason PostgreSQL is used , in a case where there is a migration failure while modifying your database records , the entire modification gets rolled back to where you started instead of crashing like  MySQL.
-- Annotate - Adds a comment summarizing the current schema for each models
+- Annotate - Adds a comment summarizing the current schema for each models.
 - Rubocop - a framework to make sure developers are in line with best practices.
-- ByeBug - a gem for debugging in rails
-- Power Types - this framework encourages developers to use classes beyond models and controllers to hold the app's logic, for example services and commands
+- ByeBug - a gem for debugging in rails.
+- Power Types - this framework encourages developers to use classes beyond models and controllers to hold the app's logic, for example services and commands.
 
 ## Requirements
 
@@ -174,4 +172,6 @@ bundle exec rspec
 - [x] The user should see the metrics in a timeline
 - [x] The user should see averages per minute/hour/day
 
-#### Note 
+#### Feature Prospect
+ - Add sidekq in order to create metrics automatically (thats why we have the auto attribute on Site model)
+ - Add More test cases or refactor the current one properly.
