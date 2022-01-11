@@ -6,17 +6,15 @@
 
 ## How to Use
 To setup files and the app run
+
 ```
 bundle install
 ```
+
 ```
-rails db:create
+rails db:setup
 ```
 
-Run seed data
-```
-rails db:seed
-```
 To run test suite
 ```
 bundle exec rspec 
@@ -150,7 +148,7 @@ bundle exec rspec
 ###### Delete metric
 	DELETE api/v1/metrics/:id
 
-## Architecture
+## Description
 - There are three entities created in this project (site, category, metric)
 - The Site entity gives users the ability to create a metrics board for each site or data board.
 - The Category entity handles the categorization of metrics , it can be used as a filter for metrics.
