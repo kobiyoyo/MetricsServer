@@ -12,5 +12,4 @@ class Api::V1::AveragesController < ApplicationController
   def set_site
     @site = Site.find(params[:site_id])
   end
-
 end

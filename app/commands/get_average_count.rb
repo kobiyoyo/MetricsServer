@@ -11,7 +11,7 @@ class GetAverageCount < PowerTypes::Command.new(:metrics)
     zero = 0
     metrics_sum = @metrics.averages(time).sum(:value)
     metrics_count = @metrics.averages(time).count
-    return metrics_sum.to_f / metrics_count.to_f if metrics_count.positive?
+    return metrics_sum / metrics_count.to_f if metrics_count.positive?
 
     zero
   end

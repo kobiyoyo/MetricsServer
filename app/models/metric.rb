@@ -21,8 +21,8 @@ class Metric < ApplicationRecord
   belongs_to :category
 
   # Scope
-  scope :averages, ->(date) { where('created_at > ?', date )}
-  
+  scope :averages, ->(date) { where('created_at > ?', date) }
+
   # Validations
   validates :value, presence: true,
                     numericality: true, inclusion: 1..100
