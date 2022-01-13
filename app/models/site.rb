@@ -13,7 +13,7 @@ class Site < ApplicationRecord
   after_initialize :set_default_auto, if: :new_record?
 
   # Associations
-  has_many :categories
+  has_many :categories, dependent: :destroy
 
   # validations
   validates :name, presence: true, uniqueness: true, length: { in: 4..50 }

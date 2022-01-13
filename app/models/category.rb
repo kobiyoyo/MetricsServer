@@ -18,7 +18,7 @@
 #
 class Category < ApplicationRecord
   # Associations
-  has_many :metrics
+  has_many :metrics, dependent: :destroy
   belongs_to :site
 
   # validations
