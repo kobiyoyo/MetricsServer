@@ -10,7 +10,7 @@
 #
 class Site < ApplicationRecord
   # Callback
-  after_initialize :set_default_auto, if: :new_record?
+  before_save :set_default_auto, if: :new_record?
 
   # Associations
   has_many :categories, dependent: :destroy
