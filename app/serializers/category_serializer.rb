@@ -16,12 +16,6 @@
 #
 #  fk_rails_...  (site_id => sites.id)
 #
-class Category < ApplicationRecord
-  # Associations
-  has_many :metrics, dependent: :destroy
-  belongs_to :site
-
-  # validations
-  validates :name, presence: true, uniqueness: true, length: { in: 4..50 }
-  validates :site_id, presence: true
+class CategorySerializer < ActiveModel::Serializer
+  attributes :id, :name, :site_id
 end

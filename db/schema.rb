@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_02_144244) do
+ActiveRecord::Schema.define(version: 2022_01_02_172315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,25 @@ ActiveRecord::Schema.define(version: 2022_01_02_144244) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "site_id", null: false
+    t.index ["site_id"], name: "index_categories_on_site_id"
   end
 
+  create_table "metrics", force: :cascade do |t|
+    t.integer "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "category_id", null: false
+    t.index ["category_id"], name: "index_metrics_on_category_id"
+  end
+
+  create_table "sites", force: :cascade do |t|
+    t.string "name"
+    t.integer "auto"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  add_foreign_key "categories", "sites"
+  add_foreign_key "metrics", "categories"
 end

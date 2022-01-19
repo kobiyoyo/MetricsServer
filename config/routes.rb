@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
-  resources :categories
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    namespace :v1 do
+      resources :sites do 
+        resources :categories, only: [:index]
+        resources :metrics, only: [:index]
+        get 'averages', to: 'averages#index' 
+      end
+      resources :categories, only: [:destroy, :update, :create]
+      resources :metrics, only: [:destroy, :update, :create]
+    end
+  end
 end
